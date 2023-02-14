@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+
+  <head>
+    <meta charset='UTF-8'>
+    <script src='https://unpkg.com/react@16.3.1/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+  </head>
+</head>
+
+<body>
+  <h1>----------H</h1>
+  <div id='root'></div>
+  <h1>----------F</h1>
+
+
+  <script type='text/babel'>
+
+    const Shelter = (props)=>{
+      return(
+        <div className="whatevewr">
+          shelter
+        </div>
+      )
+    }
+
+
+    const Dog = (props)=>{
+      console.log("----------")
+      console.log(props.name)
+      console.log("----------")
+      return(
+        <div>
+          This dog component has a caretaker of {props.caretaker} a name of {props.name} an age of {props.age} and is a {props.breed}
+          <Shelter />
+        </div>
+      )
+    }
+
+    const App = (props) => {
+      console.log(props)
+      return (
+        <div>
+          <Dog name={"Runa"} age={4} breed={"pit"} caretaker={"Ryan"}/>
+          <Dog name={"Hunter"} age={3} breed={"bull"} caretaker={"Vic"}/>
+          <Dog name={"Skadi"} age={2} breed={"yorkshire"} caretaker={"Sarah"}/>
+          <Dog name={"Odie"} age={9} breed={"nice"} caretaker={"John"}/>
+          <Dog name={"Mickey"} age={4} breed={"pit"} caretaker={"Steve"}/>
+          <h3>is hte best dog</h3>
+        </div>
+      )
+    }
+
+    ReactDOM.render(<App />, document.querySelector('#root'));
+  </script>
+</body>
+
+</html>
